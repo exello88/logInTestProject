@@ -1,0 +1,9 @@
+<div class="authentication">
+
+    <div *ngIf="showLogIn">
+        <app-log-in (showLogInChange)="showLogIn = $event" (showSignUpChange)="showSignUp = $event"></app-log-in>
+    </div>
+    <div *ngIf="showSignUp">
+        <app-sign-up (showLogInChange)="showLogIn = $event" (showSignUpChange)="showSignUp = $event"></app-sign-up>
+    </div>
+</div>

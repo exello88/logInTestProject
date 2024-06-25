@@ -1,0 +1,18 @@
+<div class="logInField">
+    <div class="selectMod">
+        <p class="logInTitle">ВХОД</p>
+        <p class="signUpTitle" (click)="selectMod()">РЕГИСТРАЦИЯ</p>
+    </div>
+    <div class="inputEmailField">
+        <input type="email" class="inputEmail" placeholder="E-mail" #inputEmail>
+        <input type="password" class="inputPassword" placeholder="Password" #inputPassword>
+    </div>
+    <div class="rememberCheckboxField">
+        <input type="checkbox" class="rememberCheckbox">
+        <p class="rememberCheckboxTitle">Запомнить меня</p>
+    </div>
+    <p class="errorField" #errorField></p>
+    <div class="logInBtn" (click) = "logIn()">
+        <p class="logInBtnTitle" >Вход</p>
+    </div>
+</div>
