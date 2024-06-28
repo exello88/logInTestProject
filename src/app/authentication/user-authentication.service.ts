@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, getIdToken, AuthError } from "firebase/auth";
 import { getAuth } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from './environment';
+import { firebaseConfig } from '../environment';
 
 
 
@@ -18,7 +18,7 @@ export class UserAuthenticationService {
   }
   public async loginUser(email: string, password: string): Promise<object> {
     try {
-      const users = await signInWithEmailAndPassword(auth, email, password);
+      const users = await signInWithEmailAndPassword(auth, email, password);      
       localStorage.setItem('authToken', await getIdToken(users.user));
       return users;
     } catch (error: unknown) {

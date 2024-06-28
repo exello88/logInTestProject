@@ -38,22 +38,6 @@
     margin-top: 3px;
 }
 
-.rememberCheckboxField {
-    display: flex;
-}
-
-.rememberCheckbox {
-    accent-color: #F8F1FF;
-    margin-left: 90px;
-    margin-top: 20px;
-}
-
-.rememberCheckboxTitle {
-    margin-top: 20px;
-    margin-left: 10px;
-    font-family: 'Rubik', sans-serif;
-}
-
 .errorField{
     margin-left: 90px;
     margin-top: 10px;

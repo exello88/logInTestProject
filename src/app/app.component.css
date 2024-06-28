@@ -1,0 +1,27 @@
+.fiebedAdmin {
+    width: 1440px;
+    height: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 5px;
+}
+
+.fieldAdmin__btn {
+    cursor: pointer;
+    margin-left: 1365px;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.adminBtn__text {
+    color: #333;
+    font-size: 15px;
+    margin-top: 2px;
+    font-family: "Montserrat", "Arial", sans-serif;
+}
+
+.fieldAdmin__btn:hover {
+    background-color: #f1cfff;
+}

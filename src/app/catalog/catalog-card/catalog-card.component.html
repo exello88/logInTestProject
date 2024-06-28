@@ -1,0 +1,10 @@
+<div class="areaCard__card catalogCard{{card.id}}">
+    <div class="card__content">
+        <img src="{{imageUrl}}" alt="cardImage" class="card__Img  catalogCardIMG{{card.id}}">
+        <p class="card__title  catalogCardTitle{{card.id}}">{{card.name}}</p>
+        <p class="card__price  catalogCardPrice{{card.id}}">$ {{card.price}}</p>
+        <div *ngIf="authStatus" class="card__deleteBTN catalogCardDelete{{card.id}}" (click) = "onDeleteCard()">
+            <p class="deleteBTN__title">Delete</p>
+        </div>
+    </div>
+</div>

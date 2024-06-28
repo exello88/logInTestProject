@@ -8,8 +8,10 @@ import { FirebaseError } from 'firebase/app';
   styleUrl: './log-in.component.css'
 })
 export class LogInComponent {
+  public showMainPage : boolean = false;
   @Output() showLogInChange = new EventEmitter<boolean>();
   @Output() showSignUpChange = new EventEmitter<boolean>();
+  @Output() authStatus = new EventEmitter<boolean>();
   @ViewChild('inputEmail') private inputEmailRef!: ElementRef;
   @ViewChild('inputPassword') private inputPasswordRef!: ElementRef;
   @ViewChild('errorField') private errorField!: ElementRef;
@@ -21,19 +23,22 @@ export class LogInComponent {
     this.showSignUpChange.emit(true);
   }
   public async logIn() {
+    let error = false;
     const email = this.inputEmailRef.nativeElement.value;
     const password = this.inputPasswordRef.nativeElement.value;
     try {
       await this.authService.loginUser(email, password);
-    } catch (error: unknown) {//Тут я уже не знаю что использовать, потому что оно ничего кроме any и unknow ничего не присваивает
+    } catch (error: unknown) {
       if (error instanceof FirebaseError) {
         switch (error.code) {
           case 'auth/invalid-credential':
+            error = true;
             this.inputEmailRef.nativeElement.style.border = '1px solid red';
             this.inputPasswordRef.nativeElement.style.border = '1px solid red';
             this.errorField.nativeElement.textContent = 'Неверный пароль или email.';
             break;
           case 'auth/invalid-email':
+            error = true;
             this.inputPasswordRef.nativeElement.style.border = '0px';
             this.inputEmailRef.nativeElement.style.border = '1px solid red';
             this.errorField.nativeElement.textContent = 'Неверный формат электронного адреса.';
@@ -41,6 +46,10 @@ export class LogInComponent {
         }
       }
     }
+    if (!!localStorage.getItem('authToken')){
+      this.authStatus.emit(true);
+      console.log('dssd');
+    } 
   }
 }
 

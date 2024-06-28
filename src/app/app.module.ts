@@ -2,11 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { AuthenticationModule } from './authentication/authentication.module';
-import { SignUpComponent } from './authentication/sign-up/sign-up.component';
-import { LogInComponent } from './authentication/log-in/log-in.component';
+import { CatalogModule } from './catalog/catalog.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +11,8 @@ import { LogInComponent } from './authentication/log-in/log-in.component';
   ],
   imports: [
     BrowserModule,
-    AuthenticationModule
+    AuthenticationModule,
+    CatalogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

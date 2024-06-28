@@ -30,7 +30,7 @@ export class SignUpComponent {
     if (password === passwordRepeat) {
       try {
         await this.authService.registerUser(email, password);
-      } catch (error: unknown) { //Тут я уже не знаю что использовать, потому что оно ничего кроме any и unknow ничего не присваивает
+      } catch (error: unknown) {
         if (error instanceof FirebaseError) {
           switch (error.code) {
             case 'auth/email-already-in-use':

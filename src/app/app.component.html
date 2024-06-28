@@ -1,9 +1,19 @@
-<div class="authentication">
-
-    <div *ngIf="showLogIn">
-        <app-log-in (showLogInChange)="showLogIn = $event" (showSignUpChange)="showSignUp = $event"></app-log-in>
-    </div>
-    <div *ngIf="showSignUp">
-        <app-sign-up (showLogInChange)="showLogIn = $event" (showSignUpChange)="showSignUp = $event"></app-sign-up>
+<div class="fieldAdmin" *ngIf="!authStatus">
+    <div class="fieldAdmin__btn" (click)="changeLoginAndMainField()">
+        <p class="adminBtn__text" #adminBtn__text>Staff Entry</p>
     </div>
 </div>
+
+<div class="authentication" *ngIf="!showMainPage">
+    <div *ngIf="!authStatus">
+        <div *ngIf="showLogIn">
+            <app-log-in (showLogInChange)="showLogIn = $event" (showSignUpChange)="showSignUp = $event" (authStatus)="authStatus = $event"></app-log-in>
+        </div>
+        <div *ngIf="showSignUp">
+            <app-sign-up (showLogInChange)="showLogIn = $event" (showSignUpChange)="showSignUp = $event"></app-sign-up>
+        </div>
+    </div>
+</div>
+
+<app-catalog-field *ngIf="showMainPage || authStatus" [authStatus] = "authStatus"></app-catalog-field>
+

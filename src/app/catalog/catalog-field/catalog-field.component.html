@@ -1,0 +1,20 @@
+<div class="catalog">
+    <p class="catalog__title" *ngIf="authStatus">Admin Catalog</p>
+    <p class="catalog__title" *ngIf="!authStatus">Catalog</p>
+    <div class="catalog__areaCard">
+        <app-catalog-card *ngFor="let card of cards" [card]="card" [authStatus]="authStatus"
+            (deleteCard)="onDeleteCard($event)">
+        </app-catalog-card>
+    </div>
+</div>
+
+<div class="newProduct">
+    <p class="textForInputNameProduct">Enter product name</p>
+    <input type="text" class="InputNameProduct" #inputNameProduct>
+    <p class="textForInputPriceProduct">Enter the price of the product</p>
+    <input type="text" class="InputPriceProduct" #inputPriceProduct>
+    <input type="file" class="InputImgProduct" accept="image/*" #inputImgProduct>
+    <div class="addCatalogBtn" (click) = "onAddProduct()">
+        <p class="addCatalogBtn__text">Add</p>
+    </div>
+</div>

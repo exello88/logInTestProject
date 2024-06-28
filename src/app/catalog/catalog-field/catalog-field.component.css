@@ -1,0 +1,160 @@
+.catalog {
+    width: 1440px;
+    padding-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 10px;
+    background-color: #F2F2F2;
+}
+
+.catalog__title {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    width: 400px;
+    height: 30px;
+    margin: 15px 0px 0px 660px;
+}
+
+.catalog__areaCard {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 135px 0px 200px;
+}
+
+.areaCard__card {
+    width: 250px;
+    height: 420px;
+    background-color: white;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.card__content {
+    margin-left: 15px;
+}
+
+.card__Img {
+    width: 220px;
+    height: 280px;
+    background-color: black;
+    margin-top: 15px;
+}
+
+.card__title {
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.card__price {
+    font-weight: 700;
+    font-size: 25px;
+    font-family: "Montserrat", "Arial", sans-serif;
+    margin-top: 10px;
+}
+
+.card__deleteBTN {
+    cursor: pointer;
+    margin-top: 2px;
+    width: 220px;
+    height: 40px;
+    background-color: rgb(255, 72, 72);
+    text-align: center;
+    padding-top: 7px;
+}
+
+.deleteBTN__title {
+    font-size: 25px;
+    color: white;
+}
+
+.addCatalogBtn {
+    cursor: pointer;
+    margin-top: 15px;
+    width: 320px;
+    height: 60px;
+    border: 3px solid black;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.addCatalogBtn__text {
+    font-size: 60px;
+}
+
+.card__content {
+    margin-left: 15px;
+}
+
+.card__Img {
+    width: 220px;
+    height: 280px;
+    background-color: black;
+    margin-top: 15px;
+}
+
+.card__title {
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.card__price {
+    font-weight: 700;
+    font-size: 25px;
+    font-family: "Montserrat", "Arial", sans-serif;
+    margin-top: 10px;
+}
+
+.card__deleteBTN {
+    cursor: pointer;
+    margin-top: 2px;
+    width: 220px;
+    height: 40px;
+    background-color: rgb(255, 72, 72);
+    text-align: center;
+    padding-top: 7px;
+}
+
+.deleteBTN__title {
+    font-size: 25px;
+    color: white;
+}
+
+.newProduct {
+    display: grid;
+    width: 423px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border: 1px solid black;
+    background-color: rgb(252, 82, 238);
+}
+
+.textForInputNameProduct, .textForInputPriceProduct {
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.InputNameProduct, .InputPriceProduct {
+    width: 400px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.InputImgProduct {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
