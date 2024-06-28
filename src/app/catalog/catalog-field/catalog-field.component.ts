@@ -39,17 +39,16 @@ export class CatalogFieldComponent {
   }
 
   drawingCatalogBlock(response: { [key: string]: CardResponseInterface | null }) {
-    console.log(response);
+    Object.keys(response).forEach(cardID => {
+      if(this.currentId < +cardID) this.currentId = +cardID;
+      console.log(this.currentId + 'ds' + cardID);
+    });
     this.cards = Object.keys(response)
       .filter(key => response[key] !== null)
       .map(key => ({
         id: +key,
         ...response[key]!
-      }));
-  
-    Object.keys(this.cards).forEach(cardID => {
-      this.currentId = +cardID;
-    });
+      }));  
   }
 
   onDeleteCard(card: CardInterface) {
@@ -75,7 +74,7 @@ export class CatalogFieldComponent {
     reader.onload = () => {
       const imageBytes = new Uint8Array(reader.result as ArrayBuffer);
       const bytesStr = imageBytes.join(' ');
-      this.currentId++;
+      this.currentId = this.currentId + 1;
       const newCardForCatalog: CardInterface = {
         'id': this.currentId,
         'img': bytesStr,
